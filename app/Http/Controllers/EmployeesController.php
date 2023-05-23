@@ -22,7 +22,7 @@ class EmployeesController extends Controller
         //list function
         public function index1() {
             $employees = EmployeesModel::all();
-           return view("employees.list", ['_t_b_l_e__employees' => $employees]);
+           return view("employees/list", ['_t_b_l_e__employees' => $employees]);
         }
   
         public function edit(Request $request, $id) {
@@ -30,7 +30,7 @@ class EmployeesController extends Controller
            $response = [
             '_t_b_l_e__employees' => $employees
            ];
-           return view("employees.edit", $response);
+           return view("employees/edit", $response);
         }
   
         
@@ -54,8 +54,11 @@ class EmployeesController extends Controller
            return redirect(route('employees-list'))->with('status', "Succesfully Deleted Employee");
         }
   
-  
-  
+         
+     public function create() {
+      return view('employees/create');
+     }
+
   
      
      public function welcome() {

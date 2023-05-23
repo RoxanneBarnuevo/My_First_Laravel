@@ -36,7 +36,7 @@ Route::get('/delete/{id}', 'StudentController@remove')->name('delete');  /*delet
 
 /*EMPLOYEES*/
 
-Route::get('/employees/list', 'StudentController@list')->name('list');
+Route::get('/employees/list', 'EmployeesController@list')->name('list');
 Route::get('/employees', 'EmployeesController@index1')->name('employees-list');
 Route::get('/employees/create', 'EmployeesController@create')->name('create');
 Route::post('/employees', 'EmployeesController@save')->name('save-employees');
