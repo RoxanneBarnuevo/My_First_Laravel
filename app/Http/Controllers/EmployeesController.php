@@ -9,7 +9,7 @@ class EmployeesController extends Controller
 {
     //
 
-    public function save(Request $request) {
+    public function save_employee(Request $request) {
         $employee = new EmployeesModel;
         $employee->fullname = $request->input('fullname');
         $employee->address = $request->input('address');
@@ -25,7 +25,7 @@ class EmployeesController extends Controller
            return view("employees.list", ['_t_b_l_e__employees' => $employees]);
         }
   
-        public function edit(Request $request, $id) {
+        public function edit_employee(Request $request, $id) {
             $employees = EmployeesModel::find($id);
            $response = [
             '_t_b_l_e__employees' => $employees
@@ -34,7 +34,7 @@ class EmployeesController extends Controller
         }
   
         
-        public function saveUpdate(Request $request, $id) {
+        public function saveUpdate_employee(Request $request, $id) {
         $data = [
            'fullname' => $request->input()['fullname'],
            'address' => $request->input()['address'],
@@ -48,15 +48,16 @@ class EmployeesController extends Controller
            
      }
   
-        public function remove($id) {
+        public function remove_employee($id) {
             $employees = EmployeesModel::find($id);
             $employees->delete();
            return redirect(route('employees-list'))->with('status', "Succesfully Deleted Employee");
         }
   
   
-  
-  
+    public function create_employee() {
+      return view('employees/create');
+    }
      
      public function welcome() {
       return view('welcome');

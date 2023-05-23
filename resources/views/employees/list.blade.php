@@ -7,6 +7,7 @@
 
 
         <section class="list">
+        <div class="container-lg">
             <div class="d-flex justify-content-between my-4">
             <h4>Employees List</h4>
             <a href="{{ route('create')}}" class="btn btn-info">Add New Employees</a>
@@ -35,10 +36,11 @@
                 
                 <td>
                   
-                    <a href="{{ route('edit', ['id' => $employee->id]) }}" class="btn btn-info">Update</a>
-                    <a href="{{ route('delete', ['id' => $employee->id]) }}" class="btn btn-danger">Delete</a> 
+                    <a href="{{ route('edit_employee', ['id' => $employee->id]) }}" class="btn btn-info">Update</a>
+                    <a href="{{ route('delete_employee', ['id' => $employee->id]) }}" class="btn btn-danger">Delete</a> 
                 </td>
             </tr>
+</div>
 </section>
             @endforeach
         </tbody>

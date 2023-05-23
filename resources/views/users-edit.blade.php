@@ -7,96 +7,45 @@
 <link rel ='stylesheet' type='text/css' href='<?php echo asset('storage/css/style.css')?>'>
 
 
-<section class="vh-100 gradient-custom">
-  <div class="container py-5 h-100">
-    <div class="row justify-content-center align-items-center h-100">
-      <div class="col-12 col-lg-9 col-xl-7">
-        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-          <div class="card-body p-4 p-md-5">
-            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form Update</h3>
-            <form action="{{ route('save-user-edit', ['id' => $accounts['id']]) }}" method="POST">
-                @csrf
-              <div class="row">
-                <div class="col-md-6 mb-4">
+<div class="container mt-5">
 
-                  <div class="form-outline">
-                    <input type="text" id="firstName" class="form-control form-control-lg" name="firstname" value="{{ $accounts ['firstname'] }}" />
-                    <label class="form-label" for="firstName">First Name</label>
-                  </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Update Student</h4>
+            </div>
+            <div class="card-body">
 
-                </div>
-                <div class="col-md-6 mb-4">
-
-                  <div class="form-outline">
-                    <input type="text" id="lastName" class="form-control form-control-lg" name="lastname" value="{{ $accounts ['lastname'] }}" />
-                    <label class="form-label" for="lastName">Last Name</label>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 d-flex align-items-center">
-
-                  <div class="form-outline datepicker w-100">
-                    <input type="date" class="form-control form-control-lg" id="birthdayDate" name="dob" value="{{ $accounts ['dob'] }}" />
-                    <label for="birthdayDate" class="form-label">Birthday</label>
-                  </div>
-
-                </div>
-                <div class="col-md-6 mb-4">
-
-                  <h6 class="mb-2 pb-1">Gender: </h6>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                      value="option1" checked />
-                    <label class="form-check-label" for="femaleGender">Female</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                      value="option2" />
-                    <label class="form-check-label" for="maleGender">Male</label>
-                  </div>
-
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                      value="option3" />
-                    <label class="form-check-label" for="otherGender">Other</label>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-6 mb-4 pb-2">
-
-                  <div class="form-outline">
-                    <input type="email" id="email" name="email" class="form-control form-control-lg" value="{{ $accounts ['email'] }}"/>
-                    <label class="form-label" for="emailAddress">Email</label>
-                  </div>
-
-                </div>
-                <div class="col-md-6 mb-4 pb-2">
-
-                  <div class="form-outline">
-                    <input type="tel" id="phonenum" name="phonenum" class="form-control form-control-lg" value="{{ $accounts ['phonenum'] }}" />
-                    <label class="form-label" for="phoneNumber">Phone Number</label>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="mt-4 pt-2">
-                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
-              </div>
-
-            </form>
-          </div>
+            <form action="{{ route('users-edit', ['id' => $accounts['id']]) }}" method="POST">
+        @csrf
+            <div class="form-elemnt my-4">
+            <label for="formGroup">First Name</label>
+                <input type="text" class="form-control" name="firstname" placeholder="First Name:" value="{{ $accounts ['firstname'] }}" required>
+            </div>
+            <div class="form-elemnt my-4">
+            <label for="formGroup">Last Name</label>
+                <input type="text" class="form-control" name="lastname" placeholder="Last Name:" value="{{ $accounts ['lastname'] }}" required>
+            </div>
+            <div class="form-elemnt my-4">
+            <label for="formGroup">Students Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Students Email:" value="{{ $accounts ['email'] }}" required>
+            </div>
+            <div class="form-elemnt my-4">
+            <label for="formGroup">Date of Birthday</label>
+                <input type="date" class="form-control" name="dob" placeholder="Birthday:" value="{{ $accounts ['dob'] }}" required>
+            </div>
+            <div class="form-element my-4">
+            <label for="formGroup">Phone Number</label>
+                <input type="tel" name="phonenum" id="" class="form-control" placeholder="Phone Number:" value="{{ $accounts ['phonenum'] }}" required>
+            </div>
+            <div class="form-element my-4">
+                <input type="submit"  value="Add Employees" class="btn btn-success">
+            </div>
+        </form>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+                </div>
+            </div>
+        </div>
+        </div>
 @endsection

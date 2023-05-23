@@ -9,6 +9,7 @@
 
 
 <section class="list">
+<div class="container-lg">
 <table class="table table-striped">
         <thead>
             <tr>
@@ -39,6 +40,7 @@
                     <a href="{{ route('delete', ['id' => $user->id]) }}" class="btn btn-danger">Delete</a> 
                 </td>
             </tr>
+</div>
 </section>
             @endforeach
         </tbody>

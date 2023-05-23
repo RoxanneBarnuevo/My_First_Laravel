@@ -14,10 +14,13 @@
             <ul class="navbar-nav me-auto">
              
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('about')}}">About</a>
+                <a class="nav-link" href="{{ route('about')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('list')}}">Employees</a>
+                <a class="nav-link" href="{{ route('employees-list')}}">Employees</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('user-list')}}">Students</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('login')}}">Login</a>
